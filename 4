@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎁 باقتك الإلكترونية</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌹 باقتك الإلكترونية 🌹</h1>
+        <img id="bouquet-img" src="" alt="باقة الورد" style="width: 200px; border-radius: 10px;">
+        <h2 id="receiver-name"></h2>
+        <p id="message-text"></p>
+        <p>مع أطيب التمنيات، <span id="sender-name"></span></p>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById("bouquet-img").src = urlParams.get('image');
+        document.getElementById("receiver-name").innerText = "إلى: " + decodeURIComponent(urlParams.get('receiver'));
+        document.getElementById("message-text").innerText = decodeURIComponent(urlParams.get('message'));
+        document.getElementById("sender-name").innerText = decodeURIComponent(urlParams.get('sender'));
+    </script>
+</body>
+</html>
