@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>باقات ورد إلكترونية</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌸 أرسل باقة ورد إلكترونية 🌸</h1>
+        <p>اختر الباقة وأضف رسالتك لإرسالها لمن تحب!</p>
+
+        <div class="bouquet-gallery">
+            <div class="bouquet" onclick="selectBouquet('bouquet1.jpg')">
+                <img src="bouquet1.jpg" alt="باقة ورد 1">
+            </div>
+            <div class="bouquet" onclick="selectBouquet('bouquet2.jpg')">
+                <img src="bouquet2.jpg" alt="باقة ورد 2">
+            </div>
+            <div class="bouquet" onclick="selectBouquet('bouquet3.jpg')">
+                <img src="bouquet3.jpg" alt="باقة ورد 3">
+            </div>
+        </div>
+
+        <div id="message-form">
+            <input type="text" id="sender" placeholder="اسمك">
+            <input type="text" id="receiver" placeholder="اسم المستلم">
+            <textarea id="message" placeholder="اكتب رسالتك هنا"></textarea>
+            <button onclick="generateLink()">🎁 أنشئ رابط الباقة</button>
+        </div>
+
+        <div id="link-section" style="display: none;">
+            <p>تم إنشاء رابط الباقة! قم بمشاركته:</p>
+            <input type="text" id="generated-link" readonly>
+            <button onclick="copyLink()">📋 نسخ الرابط</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
